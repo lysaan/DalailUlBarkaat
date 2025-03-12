@@ -13,7 +13,7 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/title"
+    android:text="title"
     android:textColor="@color/red"
     android:textSize="@dimen/_16sdp"
     android:padding="@dimen/_10sdp"
@@ -29,7 +29,7 @@
     android:visibility="gone"
     android:textColor="@color/gray_dark"
     style="@style/avenirnext_fontstyle"
-    android:text="@string/explanation"
+    android:text="explanation"
     android:textSize="@dimen/_10sdp" />
 
   <View
@@ -47,7 +47,7 @@
     android:layout_marginBottom="@dimen/_20sdp"
     android:background="@android:color/transparent"
     android:gravity="center_horizontal"
-    android:text="@string/ok"
+    android:text="ok"
     android:textColor="@color/blue"
     android:textSize="@dimen/_16sdp" />
 </LinearLayout>

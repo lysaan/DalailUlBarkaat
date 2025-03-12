@@ -454,53 +454,7 @@ class MyHelper(var TAG: String, val context: Context) {
 //
 //  }
   
-  /**
-   * Show this dialog whenever user disable location from Settings even Location Permission is enabled.
-   */
-  fun showGPSDisabledAlertToUser() {
-    try {
-      val mDialogView = LayoutInflater.from(context).inflate(R.layout.dialog_permissions, null)
-      val permissions_title = mDialogView.findViewById<TextView>(R.id.permissions_title)
-      val permissions_sub_title = mDialogView.findViewById<TextView>(R.id.permissions_sub_title)
-      val permissions_yes = mDialogView.findViewById<TextView>(R.id.permissions_yes)
-      val permissions_no = mDialogView.findViewById<TextView>(R.id.permissions_no)
-      val cftd_save_bottom = mDialogView.findViewById<View>(R.id.cftd_save_bottom)
-      
-      permissions_title.text = context.resources.getString(R.string.gps_permission_title)
-      permissions_sub_title.text = context.resources.getString(R.string.gps_permission_explanation)
-      permissions_yes.text = context.resources.getString(R.string.gps_location_settings)
-      permissions_no.text = context.resources.getString(R.string.cancel)
-      
-      cftd_save_bottom.visibility = View.VISIBLE
-      permissions_no.visibility = View.VISIBLE
-      
-      
-      val mBuilder = AlertDialog.Builder(context).setView(mDialogView)
-      val mAlertDialog = mBuilder.show()
-      mAlertDialog.setCancelable(true)
-      
-      val window = mAlertDialog.window
-      val wlp = window!!.attributes
-      
-      wlp.gravity = Gravity.CENTER
-      window.attributes = wlp
-      
-      permissions_yes.setOnClickListener {
-        mAlertDialog.dismiss()
-        val callGPSSettingIntent = Intent(
-          Settings.ACTION_LOCATION_SOURCE_SETTINGS
-        )
-        context.startActivity(callGPSSettingIntent)
-      }
-      permissions_no.setOnClickListener {
-        mAlertDialog.dismiss()
-      }
-      
-    }
-    catch (e: Exception) {
-      log("${e.localizedMessage}")
-    }
-  }
+
   
   /**
    * If User deny Any Permission show this dialog. This dialog can not be cancelled

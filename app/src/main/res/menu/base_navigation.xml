@@ -10,17 +10,17 @@
     android:id="@+id/navb_charging"
     android:checked="false"
     android:icon="@drawable/current"
-    android:title="@string/charging" />
+    android:title="charging" />
   <item
     android:id="@+id/navb_current"
     android:checked="false"
     android:icon="@drawable/battery_charging_full"
-    android:title="@string/current" />
+    android:title="current" />
 
   <item
     android:id="@+id/navb_tips"
     android:checked="false"
     android:icon="@drawable/lightbulb_outline"
-    android:title="@string/tips" />
+    android:title="tips" />
 
 </menu>
