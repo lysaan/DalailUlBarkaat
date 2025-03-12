@@ -253,5 +253,6 @@ Without these notifications, you may miss important updates that help optimize b
     <string name="monitoring_started">Monitoring started</string>
     <string name="explanation_for_special_use" translatable="false">Service for battery monitoring and critical alerts.</string>
     <string name="service_description">BatteryGo service for monitoring battery health</string>
+    <string name="warid_ul_ghaib">Warid Ul Ghaib</string>
 
 </resources>

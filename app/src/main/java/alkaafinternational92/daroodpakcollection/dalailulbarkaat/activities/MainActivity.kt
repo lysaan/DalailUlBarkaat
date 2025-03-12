@@ -15,32 +15,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     val contentFrameLayout = findViewById<FrameLayout>(R.id.base_content_frame)
     layoutInflater.inflate(R.layout.activity_main, contentFrameLayout)
 
-    val pdfView = findViewById<PDFView>(R.id.pdfView)
-
-    val themeMode = myHelper.getAppSettings().theme // 0 = System, 1 = Night, 2 = Light
-
-    val isNightMode = when (themeMode) {
-      1 -> true  // Night Mode
-      2 -> false // Light Mode
-      0 -> { // System Default
-        val nightModeFlags = resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK
-        nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES
-      }
-      else -> false
-    }
-
-    pdfView.fromAsset("WaridUlGhaib.pdf")
-      .enableSwipe(true) // Allows swiping pages
-      .swipeHorizontal(false) // Set to true for horizontal scrolling
-      .nightMode(isNightMode)
-      .enableDoubletap(true) // Zoom using double-tap
-      .enableAnnotationRendering(true) // Display annotations
-      .enableAntialiasing(true) // Improves text quality
-      .pageSnap(true) // Enables snapping
-      .autoSpacing(true) // Adjust spacing automatically
-      .pageFling(true) // Enables fling to change pages
-      .load()
-
   }
 
   override fun onResume() {

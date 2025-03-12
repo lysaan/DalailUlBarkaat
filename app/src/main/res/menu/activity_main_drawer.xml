@@ -9,6 +9,10 @@
       android:icon="@drawable/ic_home"
       android:title="@string/home" />
     <item
+        android:id="@+id/nav_waridulghaib"
+        android:icon="@drawable/library_books"
+        android:title="@string/warid_ul_ghaib" />
+    <item
       android:id="@+id/nav_night_mode"
       android:icon="@drawable/brightness4"
       android:title="@string/night_mode" />

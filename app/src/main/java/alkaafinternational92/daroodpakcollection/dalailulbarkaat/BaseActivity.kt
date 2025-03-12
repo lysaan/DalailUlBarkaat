@@ -30,6 +30,7 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.C
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Utils
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.WaridUlGhaibActivity
 
 
 open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -104,7 +105,10 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     when (item.itemId) {
       R.id.nav_home -> {
         val intent = Intent(this, MainActivity::class.java)
-//        val intent = Intent(this, BatteryMainActivity::class.java)
+        startActivity(intent)
+      }
+      R.id.nav_waridulghaib -> {
+        val intent = Intent(this, WaridUlGhaibActivity::class.java)
         startActivity(intent)
       }
       
