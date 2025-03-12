@@ -1,9 +1,9 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 class MyEnum {
   companion object {
     const val ONE_DAY = 86400000 // Milliseconds in a day
-    const val ANDROID_BATTERY = "findmyphone.findmyphonebyclap.phonefindergo"
+    const val ANDROID_BATTERY = "alkaafinternational92.daroodpakcollection.dalailulbarkaat"
     const val MIN_BACKOFF_MILLIS = 60 * 1000L // 60 seconds delays for service run and other background tasks
     const val TEMP_UNIT_CELSIUS = 0
     const val TEMP_UNIT_FAHRENHEIT = 1

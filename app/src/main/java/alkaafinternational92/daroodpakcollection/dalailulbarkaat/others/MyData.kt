@@ -1,9 +1,9 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.TEMP_UNIT_CELSIUS
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_SYSTEM
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TEMP_UNIT_CELSIUS
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
 import java.io.Serializable
 
 class MyData : Serializable {

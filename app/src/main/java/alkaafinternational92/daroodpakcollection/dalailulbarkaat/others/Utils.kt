@@ -1,14 +1,14 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_DARK
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_LIGHT
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_SYSTEM
-import findmyphone.findmyphonebyclap.phonefindergo.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_DARK
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 
 
 object Utils {

@@ -1,7 +1,7 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import android.os.Build
-import findmyphone.findmyphonebyclap.phonefindergo.BuildConfig
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.BuildConfig
 
 
 import java.io.Serializable

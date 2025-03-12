@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="false"
         tools:replace="android:label">
         <activity
-            android:name="findmyphone.findmyphonebyclap.phonefindergo.activities.PhoneFindGoMainActivity"
+            android:name="alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -25,10 +25,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="findmyphone.findmyphonebyclap.phonefindergo.activities.SettingsActivity"
+            android:name="alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name="findmyphone.findmyphonebyclap.phonefindergo.BaseActivity"
+            android:name="alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

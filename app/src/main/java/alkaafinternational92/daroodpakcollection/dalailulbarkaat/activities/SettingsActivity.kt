@@ -1,22 +1,21 @@
-package findmyphone.findmyphonebyclap.phonefindergo.activities
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities
 import android.app.UiModeManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
-import findmyphone.findmyphonebyclap.phonefindergo.BaseActivity
-import findmyphone.findmyphonebyclap.phonefindergo.R
-import findmyphone.findmyphonebyclap.phonefindergo.others.LanguageUtils
-import findmyphone.findmyphonebyclap.phonefindergo.others.LanguageUtils.languages
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum
-import findmyphone.findmyphonebyclap.phonefindergo.others.Utils
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.LanguageUtils
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.LanguageUtils.languages
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Utils
 
 class SettingsActivity : BaseActivity(), View.OnClickListener {
   lateinit var theme_group: RadioGroup
@@ -173,7 +172,7 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
   override fun onClick(v: View?) {
     when (v!!.id) {
       R.id.home -> {
-        val intent = Intent(this, PhoneFindGoMainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
       }
     }

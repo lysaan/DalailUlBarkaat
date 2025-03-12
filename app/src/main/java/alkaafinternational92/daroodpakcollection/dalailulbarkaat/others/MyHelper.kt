@@ -1,4 +1,4 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -23,7 +23,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import findmyphone.findmyphonebyclap.phonefindergo.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 import java.math.BigDecimal
 import java.math.BigInteger
 import java.math.RoundingMode

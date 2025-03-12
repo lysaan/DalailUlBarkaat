@@ -5,7 +5,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:keepScreenOn="true"
-  tools:context="findmyphone.findmyphonebyclap.phonefindergo.BaseActivity">
+  tools:context="alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity">
 
   <com.google.android.material.appbar.AppBarLayout
     android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import com.google.gson.annotations.SerializedName
 

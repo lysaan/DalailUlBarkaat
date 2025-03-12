@@ -1,35 +1,19 @@
-package findmyphone.findmyphonebyclap.phonefindergo.activities
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities
 
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.media.AudioManager
-import android.media.ToneGenerator
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
-import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.SeekBar
-import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.SwitchCompat
-import androidx.core.app.NotificationManagerCompat
 import com.github.barteksc.pdfviewer.PDFView
-import com.lysaan.batterygo.others.MyForegroundService
-import findmyphone.findmyphonebyclap.phonefindergo.BaseActivity
-import findmyphone.findmyphonebyclap.phonefindergo.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 
-class PhoneFindGoMainActivity : BaseActivity(), View.OnClickListener {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     val contentFrameLayout = findViewById<FrameLayout>(R.id.base_content_frame)
-    layoutInflater.inflate(R.layout.activity_phone_find_go_main, contentFrameLayout)
+    layoutInflater.inflate(R.layout.activity_main, contentFrameLayout)
 
     val pdfView = findViewById<PDFView>(R.id.pdfView)
 

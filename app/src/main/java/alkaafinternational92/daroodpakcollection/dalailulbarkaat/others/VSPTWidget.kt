@@ -1,4 +1,4 @@
-package findmyphone.findmyphonebyclap.phonefindergo.others
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -7,8 +7,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.widget.RemoteViews
-import findmyphone.findmyphonebyclap.phonefindergo.R
-import findmyphone.findmyphonebyclap.phonefindergo.activities.PhoneFindGoMainActivity
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity
 
 
 /**
@@ -37,7 +37,7 @@ internal fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManage
 //    views.setTextViewText(R.id.appwidget_text, widgetText)
 //    appWidgetManager.updateAppWidget(appWidgetId, views)
   
-  val intent = Intent(context, PhoneFindGoMainActivity::class.java)
+  val intent = Intent(context, MainActivity::class.java)
 //  var pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
   // App crashing when launched from widget issue fixed.
   val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

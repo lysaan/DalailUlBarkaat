@@ -1,13 +1,10 @@
-package findmyphone.findmyphonebyclap.phonefindergo
+package alkaafinternational92.daroodpakcollection.dalailulbarkaat
 
 import android.Manifest
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.content.res.Configuration
 import android.net.Uri
-import android.os.BatteryManager
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -17,27 +14,22 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import findmyphone.findmyphonebyclap.phonefindergo.activities.SettingsActivity
-import findmyphone.findmyphonebyclap.phonefindergo.classes.MyBatteryInfo
-import findmyphone.findmyphonebyclap.phonefindergo.others.AppRater
-import findmyphone.findmyphonebyclap.phonefindergo.others.DeviceDetails
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyData
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_DARK
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_LIGHT
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyEnum.Companion.THEME_SYSTEM
-import findmyphone.findmyphonebyclap.phonefindergo.others.MyHelper
-import findmyphone.findmyphonebyclap.phonefindergo.others.Utils
-import findmyphone.findmyphonebyclap.phonefindergo.R
-import findmyphone.findmyphonebyclap.phonefindergo.activities.PhoneFindGoMainActivity
-
-import java.io.File
-import kotlin.math.abs
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.SettingsActivity
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.MyBatteryInfo
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.AppRater
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.DeviceDetails
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyData
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_DARK
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Utils
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity
 
 
 open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -111,7 +103,7 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     
     when (item.itemId) {
       R.id.nav_home -> {
-        val intent = Intent(this, PhoneFindGoMainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
 //        val intent = Intent(this, BatteryMainActivity::class.java)
         startActivity(intent)
       }
