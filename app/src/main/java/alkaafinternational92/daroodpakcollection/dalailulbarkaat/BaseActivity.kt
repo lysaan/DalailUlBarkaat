@@ -43,12 +43,6 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
   lateinit var base_content_frame: FrameLayout
   lateinit var base_nav_view: NavigationView
   
-  protected var myBatteryInfo = MyBatteryInfo()
-  private var lastBatteryLevel = -1
-  private var lastChargeTime = System.currentTimeMillis()
-  private var currentMax = 1.0
-  private var previousState = 0
-  
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     
@@ -183,7 +177,7 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
   }
   
   private fun doEmail() {
-    val email = "lysaanofficial@gmail.com"
+    val email = "alkaafinternational92@gmail.com"
     val subject = getString(R.string.email_subject)
     val body = getString(R.string.email_body)
     

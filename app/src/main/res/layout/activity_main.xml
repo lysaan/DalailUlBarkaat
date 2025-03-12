@@ -17,6 +17,12 @@ tools:context=".activities.MainActivity">
         android:layout_marginBottom="@dimen/_20sdp"
         android:text="@string/override_name" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_below="@id/settings_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
 
 
