@@ -1,0 +1,257 @@
+<resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_subtitle">Take care of battery</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="home">Home</string>
+    <string name="report_error">Report Error</string>
+    <string name="email">Email</string>
+    <string name="battery">Battery</string>
+    <string name="battery_level">Battery Level</string>
+    <string name="request_feature">Request Feature</string>
+    <string name="rate_app">Rate App</string>
+    <string name="tips">Tips</string>
+    <string name="charger">Charger</string>
+    <string name="charging">Charging</string>
+    <string name="good">Good</string>
+    <string name="battery_health">Battery Health</string>
+    <string name="charging_status">Charging Status</string>
+    <string name="charging_source">Charging Source</string>
+    <string name="usb">USB</string>
+    <string name="battery_temperature">Battery Temperature</string>
+    <string name="_33_c">33° C</string>
+    <string name="charger_quality">Charger Quality</string>
+    <string name="fast_charging">Fast Charging</string>
+    <string name="charger_faulty">Charger Faulty</string>
+    <string name="technology">Technology</string>
+    <string name="li_ion">Li-ion</string>
+    <string name="capacity">Capacity</string>
+    <string name="_4400">4400</string>
+    <string name="current">Current</string>
+    <string name="no">No</string>
+    <string name="title">Title</string>
+    <string name="explanation">Explanation</string>
+    <string name="ok">OK</string>
+    <string name="night_mode">Dark Mode</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy">Privacy</string>
+    <string name="settings">Settings</string>
+    <string name="communicate">Communicate</string>
+    <string name="loading_data_message">Loading …</string>
+    <string name="gps_permission_title">gps_permission_title</string>
+    <string name="gps_permission_explanation">gps_permission_explanation</string>
+    <string name="gps_location_settings">gps_location_settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="current_details">Current Details</string>
+    <string name="current_discharging_details">Current Discharging Details</string>
+    <string name="current_charging_details">Current Charging Details</string>
+    <string name="battery_details">Battery Details</string>
+    <string name="charging_details">Charging Details</string>
+    <string name="full_charge_time">Full Charge Time</string>
+    <string name="battery_capacity">Battery Capacity</string>
+    <string name="charging_speed">Charging Speed</string>
+    <string name="current_minimum">Current Minimum</string>
+    <string name="current_now">Current Now</string>
+    <string name="current_average">Current Average</string>
+    <string name="remaining_time">Remaining Time</string>
+    <string name="temperature">Temperature</string>
+    <string name="current_flow">Current Flow</string>
+    <string name="voltages">Voltages</string>
+    <string name="battery_status">Battery Status</string>
+    <string name="current_maximum">Current Maximum</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="battery_used">Battery Used</string>
+    <string name="battery_remaining">Battery Remaining</string>
+    <string name="battery_charged">Battery Charged</string>
+    <string name="watts">Watts</string>
+    <string name="system">System</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="temperature_unit">Temperature Unit</string>
+    <string name="theme">Theme</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="celsius">Celsius</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="temperature_unit_set_to_celsius">Temperature unit set to Celsius</string>
+    <string name="temperature_unit_set_to_fahrenheit">Temperature unit set to Fahrenheit</string>
+    <string name="temperature_unit_set_to_kelvin">Temperature unit set to Kelvin</string>
+    <string name="version_string">Version: %1$s</string>
+    <string name="battery_health_good">Good</string>
+    <string name="battery_health_overheat">Overheat</string>
+    <string name="battery_health_dead">Dead</string>
+    <string name="battery_health_over_voltage">Over Voltage</string>
+    <string name="battery_health_unspecified_failure">Unspecified Failure</string>
+    <string name="battery_health_cold">Cold</string>
+    <string name="battery_health_unknown">Unknown</string>
+    <string name="charging_source_not_charging">Not Charging</string>
+    <string name="charging_source_ac_charger">AC Charger</string>
+    <string name="charging_source_usb_charger">USB Charger</string>
+    <string name="charging_source_wireless_charger">Wireless Charger</string>
+    <string name="charging_source_unknown">Unknown</string>
+    <string name="power_source_quality_high">High Quality</string>
+    <string name="power_source_quality_low">Low Quality</string>
+    <string name="power_source_quality_standard">Standard Quality</string>
+    <string name="power_source_quality_poor">Poor Quality</string>
+    <string name="power_source_quality_moderate">Moderate Quality</string>
+    <string name="power_source_quality_not_charging">Not Charging</string>
+    <string name="level_critical">Critical</string>
+    <string name="level_low">Low</string>
+    <string name="level_moderate">Moderate</string>
+    <string name="level_high">High</string>
+    <string name="charger_faulty_yes">Yes</string>
+    <string name="charger_faulty_no">No</string>
+    <string name="charger_faulty_not_charging">Not Charging</string>
+    <string name="charging_status_charging">Charging</string>
+    <string name="charging_status_not_charging">Not Charging</string>
+    <string name="current_status_gaining">Gaining Current</string>
+    <string name="current_status_losing">Losing Current</string>
+    <string name="unknown">Unknown</string>
+    <string name="email_subject">Feature Request - BatteryGo</string>
+    <string name="email_body">Hi, I like your app.\nI would like to request a new feature.\n\n</string>
+    <string name="choose_email_client">Choose Email Client</string>
+    <string name="error_no_email_client">No Email Client</string>
+    <string name="error_email_instructions">Please email to %1$s</string>
+    <string name="theme_settings_saved">Theme settings saved successfully.</string>
+    <!-- Dos Tips -->
+    <string name="tip_1_title">Keep Battery Level Between 20%-80%</string>
+    <string name="tip_1_description">Avoid full charges (100%) and letting the battery drop to 0%. This reduces battery wear.</string>
+
+    <string name="tip_2_title">Use the Original Charger</string>
+    <string name="tip_2_description">Always use the charger and cable that came with your device or a certified equivalent.</string>
+
+    <string name="tip_3_title">Enable Adaptive Battery and Brightness</string>
+    <string name="tip_3_description">These features optimize battery usage based on your habits and save power by adjusting performance intelligently.</string>
+
+    <string name="tip_4_title">Close Unnecessary Apps</string>
+    <string name="tip_4_description">Use the \'Force Stop\' option for apps running unnecessarily in the background.</string>
+
+    <string name="tip_5_title">Keep the Software Updated</string>
+    <string name="tip_5_description">Updates often include battery and performance optimization.</string>
+
+    <string name="tip_6_title">Use Battery Saver Mode</string>
+    <string name="tip_6_description">Activate battery saver when you\'re running low on charge to extend usage.</string>
+
+    <string name="tip_7_title">Keep Apps Updated</string>
+    <string name="tip_7_description">Developers optimize apps for better battery usage in updates.</string>
+
+    <string name="tip_8_title">Maintain Moderate Brightness Levels</string>
+    <string name="tip_8_description">Use auto-brightness or manually keep the screen brightness low when possible.</string>
+
+    <string name="tip_9_title">Limit Background Activities</string>
+    <string name="tip_9_description">Restrict background data and activity for less-used apps.</string>
+
+    <string name="tip_10_title">Remove Unused Apps and Widgets</string>
+    <string name="tip_10_description">Keep your device uncluttered to reduce background processes and save battery.</string>
+
+    <string name="tip_11_title">Avoid Extreme Temperatures</string>
+    <string name="tip_11_description">Keep your device out of very hot or cold environments, as extreme temperatures degrade battery health.</string>
+
+    <!-- Don'ts Tips -->
+    <string name="tip_12_title">Avoid Overnight Charging</string>
+    <string name="tip_12_description">Prolonged charging when the battery is already full can lead to overheating and degrade the battery over time.</string>
+
+    <string name="tip_13_title">Don’t Use Fast Charging All the Time</string>
+    <string name="tip_13_description">While convenient, constant fast charging can stress the battery and shorten its lifespan.</string>
+
+    <string name="tip_14_title">Avoid Heavy Gaming or Streaming While Charging</string>
+    <string name="tip_14_description">This increases heat and puts a strain on the battery.</string>
+
+    <string name="tip_15_title">Don’t Use Third-Party or Non-Certified Chargers</string>
+    <string name="tip_15_description">They may not regulate voltage properly, causing damage to your battery.</string>
+
+    <string name="tip_16_title">Avoid Draining the Battery to 0% Frequently</string>
+    <string name="tip_16_description">This can lead to deep discharges that damage the battery.</string>
+
+    <string name="tip_17_title">Don’t Use High-Performance Modes Unnecessarily</string>
+    <string name="tip_17_description">Features like high-refresh-rate displays and maximum resolutions consume extra power.</string>
+
+    <string name="tip_18_title">Avoid Leaving Apps Open in the Background</string>
+    <string name="tip_18_description">Too many background apps can drain your battery quickly and slow down your device.</string>
+
+    <string name="tip_19_title">Donnot Ignore Cached Data</string>
+    <string name="tip_19_description">Regularly clear cached data from apps to free up space and maintain efficiency.</string>
+
+    <string name="tip_20_title">Don’t Charge in a Confined Space</string>
+    <string name="tip_20_description">Avoid charging on beds, under pillows, or in cases that don’t allow heat dissipation.</string>
+
+    <string name="tip_21_title">Avoid Unnecessary Syncing</string>
+    <string name="tip_21_description">Turn off auto-sync for email or social media apps you don’t frequently use.</string>
+
+    <!-- Bonus Efficiency Tips -->
+    <string name="tip_22_title">Use Dark Mode</string>
+    <string name="tip_22_description">If your device has an OLED screen, it saves battery by reducing pixel power.</string>
+
+    <string name="tip_23_title">Reboot Weekly</string>
+    <string name="tip_23_description">Clears temporary system processes that may affect performance.</string>
+
+    <string name="tip_24_title">Keep the Device Clean</string>
+    <string name="tip_24_description">Physically clean the charging port and vents for better charging and cooling.</string>
+
+    <string name="language_selection">Language Selection</string>
+    <string name="language_selection_updated_successfully">Language selection updated successfully.</string>
+    <string name="share">Share</string>
+    <string name="share_app_message">Install this app, %1$s! Here is the link: %2$s</string>
+    <string name="share_via">Share via</string>
+    <string name="cycle_count">Cycle Count</string>
+    <string name="old">Old</string>
+    <string name="used">Used</string>
+    <string name="new1">New</string>
+    <string name="no_cycle_data">"No cycle data"</string>
+    <string name="android_14_req">Android 14+ req</string>
+    <string name="android_9_req">Android 9+ req</string>
+    <string name="no_charging_data">No charging data</string>
+    <string name="unknown_charging_time">Unknown charging time</string>
+    <string name="remaining_hrs_min">%1$dh %2$dm</string>
+    <string name="remaining_min">%1$dm</string>
+    <string name="time_to_full">Time to Full</string>
+    <string name="battery_full">Battery Full</string>
+    <string name="youtube">Visit Our YouTube Channel</string>
+    <string name="remaining_1_hr">%1$dh</string>
+    <string name="battery_notifications">Battery Notifications</string>
+    <string name="battery_notifications_mute">Battery Updates</string>
+    <string name="battery_notifications_sound">Battery Critical Alerts</string>
+    <string name="battery_notifications_explanation_mute">Battery Current, temperature notification updates</string>
+    <string name="battery_notifications_explanation_sound">Get notified when your battery level is too low, too high, or when the temperature is unsafe.</string>
+    <string name="minimum_battery_alert">Minimum battery alert: %1$d%%</string>
+    <string name="maximum_battery_alert">Maximum battery alert: %1$d%%</string>
+    <string name="battery_temperature_alert">Battery temperature alert: %1$d%2$s</string>
+    <string name="minimum_battery_alert1">Minimum battery alert</string>
+    <string name="maximum_battery_alert1">Maximum battery alert</string>
+    <string name="battery_temperature_alert1">Battery temperature alert</string>
+    <string name="minimum_battery_alert1_explanation">Get notified when your battery level drops below a safe threshold (e.g., 20%).</string>
+    <string name="maximum_battery_alert1_explanation">Get notified when your battery reaches a high level (e.g., 80%) to prevent overcharging.</string>
+    <string name="battery_temperature_alert1_explanation">Get notified when your battery temperature goes above or below the recommended range, to prevent overheating.</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="battery_notifications_disabled_title">Battery Notifications Disabled</string>
+    <string name="battery_notifications_disabled_explanation">
+You will no longer receive alerts about your battery status, including:\n\n
+- Low battery warnings.\n\n
+- High battery warnings to prevent overcharging.\n\n
+- High temperature notifications.\n\n
+- Charging status updates.\n\n\n
+
+Without these notifications, you may miss important updates that help optimize battery usage, prevent overheating, and maintain device performance.
+</string>
+    <string name="enable_monitoring_required">Enable Monitoring Required</string>
+    <string name="enable_monitoring_required_explanation">To make changes, please enable battery monitoring first.</string>
+    <string name="reset">Reset</string>
+    <string name="enable_notifications">Enable Notifications:</string>
+    <string name="allow">Allow</string>
+    <string name="enable_battery_notifications">Enable Battery Notifications</string>
+    <string name="enable_battery_notifications_explanation">To ensure you stay updated on battery alerts and performance, please allow notifications for this app. \n\nThis helps us deliver timely information and keep your device optimized.</string>
+    <string name="now_title">Now: %1$s (%2$d%%)</string>
+    <string name="avg_message">Avg: -%1$s (%2$s)</string>
+    <string name="charging_title">Now: %1$s (%2$d%%)</string>
+    <string name="charging_title_9">Now: %1$s (%2$d%%: %3$s to 100%%)</string>
+    <string name="charging_message">Avg: %1$s (%2$s charger)</string>
+    <string name="battery_level_title">Battery Level: %1$d%%</string>
+    <string name="battery_level_message">Battery is at critical level! Charging is recommended.</string>
+    <string name="charging_battery_level_title">Battery Level: %1$d%%</string>
+    <string name="charging_battery_level_message">Battery is at maximum level! Disconnect charger to prevent overcharging.</string>
+    <string name="temp_warning_title">Temp Warning: %1$s</string>
+    <string name="temp_warning_message">Battery is overheating! Allow it to cool down to avoid damage.</string>
+    <string name="monitoring_started">Monitoring started</string>
+    <string name="explanation_for_special_use" translatable="false">Service for battery monitoring and critical alerts.</string>
+    <string name="service_description">BatteryGo service for monitoring battery health</string>
+
+</resources>

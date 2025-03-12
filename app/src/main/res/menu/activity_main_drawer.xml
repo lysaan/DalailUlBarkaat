@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:showIn="navigation_view">
+
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_home"
+      android:icon="@drawable/ic_home"
+      android:title="@string/home" />
+    <item
+      android:id="@+id/nav_night_mode"
+      android:icon="@drawable/brightness4"
+      android:title="@string/night_mode" />
+    <item
+      android:id="@+id/nav_settings"
+      android:icon="@drawable/ic_settings"
+      android:title="@string/settings"
+      android:visible="true" />
+  </group>
+
+  <item android:title="@string/communicate">
+    <menu>
+      <item
+        android:id="@+id/nav_rate"
+        android:icon="@drawable/star"
+        android:title="@string/rate_app" />
+
+      <item
+        android:id="@+id/nav_email"
+        android:icon="@drawable/ic_email"
+        android:title="@string/contact_us" />
+
+      <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/share"
+        android:title="@string/share" />
+    </menu>
+  </item>
+
+  <item android:title="@string/privacy">
+    <menu>
+      <item
+        android:id="@+id/nav_privacy"
+        android:icon="@drawable/ic_privacy"
+        android:title="@string/privacy_policy" />
+    </menu>
+  </item>
+
+
+</menu>
