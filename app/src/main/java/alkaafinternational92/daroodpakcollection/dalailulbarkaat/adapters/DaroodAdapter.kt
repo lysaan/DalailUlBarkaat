@@ -35,11 +35,13 @@ class DaroodAdapter(
     val youtube = v.findViewById<ImageView>(R.id.youtube)
     val report = v.findViewById<ImageView>(R.id.report)
     val share = v.findViewById<ImageView>(R.id.share)
+    val id = v.findViewById<TextView>(R.id.id)
 
     name.textSize = myHelper.getAppSettings().font_size.toFloat()
 
     val tips = myDataList[position]
     name.text = tips.name
+    id.text = tips.id
 
     if (tips.youtube.isNullOrEmpty()) {
       youtube.visibility = View.INVISIBLE

@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-
 class MainActivity : BaseActivity(), View.OnClickListener {
 
   private lateinit var recyclerView: RecyclerView
@@ -57,13 +56,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
       ?.addOnSuccessListener { documents ->
         if (!documents.isEmpty) {
           daroodList.clear() // Clear list before adding new data
-
-          for (document in documents) {
-            Log.d("Firestore", "ID ${document.id} documents")
+          for (document in documents.reversed()) {
             val id = document.id
-            val name = document.getString("name") ?: "No darood found"
-            val youtube = document.getString("youtube")?.takeIf { it.isNotBlank() } // Set to null if empty
-
+            val name = document.getString("n") ?: "No darood found"
+            val youtube = document.getString("y")?.takeIf { it.isNotBlank() } // Set to null if empty
             daroodList.add(Darood(id, name, youtube))
           }
           daroodAdapter.notifyDataSetChanged()
