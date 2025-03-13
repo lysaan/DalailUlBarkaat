@@ -16,12 +16,18 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Language
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.LanguageUtils.languages
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Utils
+import android.widget.SeekBar
+import android.widget.TextView
 
 class SettingsActivity : BaseActivity(), View.OnClickListener {
   lateinit var theme_group: RadioGroup
   lateinit var system: RadioButton
   lateinit var dark: RadioButton
   lateinit var light: RadioButton
+
+  lateinit var tv_font: TextView
+  lateinit var font_text: TextView
+  lateinit var seekbar_font: SeekBar
 
   lateinit var home: Button
   private var isUserInteraction = false
@@ -38,10 +44,17 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
     dark = findViewById(R.id.dark)
     light = findViewById(R.id.light)
 
+    tv_font = findViewById(R.id.tv_font)
+    font_text = findViewById(R.id.font_text)
+    seekbar_font = findViewById(R.id.seekbar_font)
+
     home = findViewById(R.id.home)
 
     home.setOnClickListener(this)
 
+    seekbar_font.progress = myHelper.getAppSettings().font_size
+    font_text.textSize = myHelper.getAppSettings().font_size.toFloat()
+    tv_font.text = getString(R.string.font1, myHelper.getAppSettings().font_size)
 
     languageSpinner = findViewById(R.id.language_spinner)
     val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, languages)
@@ -51,6 +64,20 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
     val selectedLanguage = LanguageUtils.languageMap[myHelper.getAppSettings().ln] ?: "English"
     val position = languages.indexOf(selectedLanguage)
     languageSpinner.setSelection(position)
+
+    seekbar_font.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+      override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        tv_font.text = getString(R.string.font1, progress)
+        font_text.textSize = progress.toFloat()
+        val appSettings = myHelper.getAppSettings()
+        appSettings.font_size = progress
+        myHelper.setAppSettings(appSettings)
+      }
+
+      override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+      override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+    })
 
 //    languageSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 //      override fun onItemSelected(parentView: AdapterView<*>?, view: View?, position: Int, id: Long) {

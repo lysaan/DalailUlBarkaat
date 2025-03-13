@@ -63,7 +63,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             daroodList.add(Darood(name, youtube))
           }
-          daroodAdapter.notifyDataSetChanged() // Refresh RecyclerView
+          daroodAdapter.notifyDataSetChanged()
           Log.d("Firestore", "Fetched ${documents.size()} documents")
         } else {
           Log.w("Firestore", "No documents found in 'ar' collection")

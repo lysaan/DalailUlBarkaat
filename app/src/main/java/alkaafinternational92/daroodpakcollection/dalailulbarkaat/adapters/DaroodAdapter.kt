@@ -2,6 +2,7 @@ package com.lysaan.batterygo.adapters
 
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.Darood
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -19,8 +20,10 @@ class DaroodAdapter(
 ) : RecyclerView.Adapter<DaroodAdapter.ViewHolder>() {
   
   private val tag1 = this::class.java.simpleName
+  lateinit var myHelper: MyHelper
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
     val v = LayoutInflater.from(parent.context).inflate(R.layout.list_row_tips, parent, false)
+    myHelper = MyHelper(tag1, context)
     return ViewHolder(v)
   }
   
@@ -29,7 +32,9 @@ class DaroodAdapter(
     val v = holder.itemView
     val name = v.findViewById<TextView>(R.id.text)
     val youtube = v.findViewById<ImageView>(R.id.youtube)
-    
+
+    name.textSize = myHelper.getAppSettings().font_size.toFloat()
+
     val tips = myDataList[position]
     name.text = tips.name
 

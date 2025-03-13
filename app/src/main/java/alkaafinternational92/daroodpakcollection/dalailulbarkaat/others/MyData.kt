@@ -13,40 +13,15 @@ class MyData : Serializable {
   @Expose
   var name: String? = null
 
-
-  // Celsius = 0, Fahrenheit = 1, Kelvin = 2
-  @SerializedName("temp_unit")
-  @Expose
-  var temp_unit: Int = TEMP_UNIT_CELSIUS
-
   // system = 0, dark = 1, light = 2
   @SerializedName("theme")
   @Expose
   var theme: Int = THEME_SYSTEM
 
-  @SerializedName("min_battery_alert")
+  @SerializedName("font_size")
   @Expose
-  var min_battery_alert: Int = 20
+  var font_size: Int = 17
 
-  @SerializedName("max_battery_alert")
-  @Expose
-  var max_battery_alert: Int = 80
-
-  @SerializedName("high_temp_c")
-  @Expose
-  var high_temp_c: Int = 35
-
-  @SerializedName("high_temp_f")
-  @Expose
-  var high_temp_f: Int = 95
-
-  @SerializedName("high_temp_k")
-  @Expose
-  var high_temp_k: Int = 308
-
-  @SerializedName("is_service_enabled")
-  @Expose
-  var is_service_enabled: Boolean = false
 
   @SerializedName("ln")
   @Expose

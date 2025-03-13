@@ -31,7 +31,7 @@ android {
         com_lysaan_batterygo {
             applicationId "alkaafinternational92.daroodpakcollection.dalailulbarkaat"
             resValue "string", "override_name", "Dalail Ul Barkaat - Darood Pak"
-            resValue "string", "privacy_url", "https://docs.google.com/document/d/1mJuDAt4OSmAB1zi7-Bci8wncYQYpZTTSqyzWaf2eczg"
+            resValue "string", "privacy_url", "https://docs.google.com/document/d/11BwH2vhS2bCyU_HAxnIId2Q5DPxlvWcN-wXDZJzK_G0"
             defaultConfig {
 //                versionName "1.2.0"
             }
