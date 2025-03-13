@@ -28,7 +28,7 @@ android {
     flavorDimensions.add("env")
     productFlavors {
         // battery
-        com_lysaan_batterygo {
+        alkaafinternational92_daroodpakcollection_dalailulbarkaat {
             applicationId "alkaafinternational92.daroodpakcollection.dalailulbarkaat"
             resValue "string", "override_name", "Dalail Ul Barkaat - Darood Pak"
             resValue "string", "privacy_url", "https://docs.google.com/document/d/11BwH2vhS2bCyU_HAxnIId2Q5DPxlvWcN-wXDZJzK_G0"
