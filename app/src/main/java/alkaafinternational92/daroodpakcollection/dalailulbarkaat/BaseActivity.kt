@@ -177,7 +177,7 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
   }
   
   private fun doEmail() {
-    val email = "alkaafinternational92@gmail.com"
+    val email = getString(R.string.email_address)
     val subject = getString(R.string.email_subject)
     val body = getString(R.string.email_body)
     

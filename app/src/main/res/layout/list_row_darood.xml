@@ -18,43 +18,53 @@
 
     <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/_10sdp"
       android:gravity="center_horizontal">
-
-      <ImageView
-          android:id="@+id/youtube"
-          android:visibility="visible"
-          android:layout_width="@dimen/_20sdp"
-          android:layout_height="@dimen/_20sdp"
-          android:layout_alignParentEnd="true"
-          android:layout_alignParentTop="true"
-          android:src="@drawable/smart_display" />
 
       <TextView
         android:id="@+id/text"
         style="@style/cf_text"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_below="@id/youtube"
+        android:layout_alignParentTop="true"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_8sdp"
-        android:text="" />
+        android:text="@string/darood_text" />
 
-      <TextView
-        android:id="@+id/explanation"
-        style="@style/cf_text"
-        android:visibility="gone"
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:textAlignment="center"
-        android:textSize="@dimen/_9sdp"
-        android:textColor="@color/gray"
-        android:text="task_ended" />
+        android:layout_alignParentBottom="true">
 
+        <ImageView
+          android:id="@+id/report"
+          android:visibility="visible"
+          android:layout_width="@dimen/_20sdp"
+          android:layout_alignParentStart="true"
+          android:layout_height="@dimen/_20sdp"
+          android:src="@drawable/report" />
+
+        <ImageView
+          android:id="@+id/youtube"
+          android:visibility="visible"
+          android:layout_width="@dimen/_20sdp"
+          android:layout_centerHorizontal="true"
+          android:layout_height="@dimen/_20sdp"
+          android:src="@drawable/smart_display" />
+
+        <ImageView
+          android:id="@+id/share"
+          android:visibility="visible"
+          android:layout_width="@dimen/_20sdp"
+          android:layout_alignParentEnd="true"
+          android:layout_height="@dimen/_20sdp"
+          android:src="@drawable/share" />
+
+
+      </RelativeLayout>
 
 
     </RelativeLayout>

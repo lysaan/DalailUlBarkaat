@@ -2,6 +2,7 @@ package alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities
 
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.adapters.DaroodAdapter
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.Darood
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +11,7 @@ import android.widget.FrameLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
-import com.lysaan.batterygo.adapters.DaroodAdapter
+
 
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -58,10 +59,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
           daroodList.clear() // Clear list before adding new data
 
           for (document in documents) {
+            Log.d("Firestore", "ID ${document.id} documents")
+            val id = document.id
             val name = document.getString("name") ?: "No darood found"
             val youtube = document.getString("youtube")?.takeIf { it.isNotBlank() } // Set to null if empty
 
-            daroodList.add(Darood(name, youtube))
+            daroodList.add(Darood(id, name, youtube))
           }
           daroodAdapter.notifyDataSetChanged()
           Log.d("Firestore", "Fetched ${documents.size()} documents")

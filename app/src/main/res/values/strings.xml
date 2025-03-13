@@ -26,6 +26,7 @@
     <string name="warid_ul_ghaib">Warid Ul Ghaib</string>
     <string name="version_string">Version: %1$s</string>
     <string name="email_subject">Feature Request - Dalail Ul Barkaat - Darood Pak</string>
+    <string name="report_subject">Incorrect Darood  in Dalail Ul Barkaat - Darood Pak</string>
     <string name="email_body">Hi, I like your app.\nI would like to request a new feature.\n\n</string>
     <string name="choose_email_client">Choose Email Client</string>
     <string name="error_no_email_client">No Email Client</string>
@@ -36,6 +37,7 @@
     <string name="fon">Font</string>
     <string name="darood_text">اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى آلِهِ وَصَحْبِهِ وَسَلَّمْ</string>
     <string name="font1">Font: %1$d</string>
+    <string name="email_address">alkaafinternational92@gmail.com</string>
 
 
 </resources>
