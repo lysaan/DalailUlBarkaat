@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -48,7 +49,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   }
 
   private fun fetchDaroodData() {
-
     db?.collection("daroodarabic")
       ?.document("Uzcijxle9p4leTfWJBxs") // Main document
       ?.collection("ar") // Fetch all documents inside "ar"
@@ -56,12 +56,22 @@ class MainActivity : BaseActivity(), View.OnClickListener {
       ?.addOnSuccessListener { documents ->
         if (!documents.isEmpty) {
           daroodList.clear() // Clear list before adding new data
-          for (document in documents.reversed()) {
+
+          val tempList = mutableListOf<Darood>()
+
+          for (document in documents) {
             val id = document.id
             val name = document.getString("n") ?: "No darood found"
-            val youtube = document.getString("y")?.takeIf { it.isNotBlank() } // Set to null if empty
-            daroodList.add(Darood(id, name, youtube))
+            val youtube = document.getString("y")?.takeIf { it.isNotBlank() }
+            tempList.add(Darood(id, name, youtube))
           }
+
+          // **Sort numerically in descending order**
+          tempList.sortByDescending { it.id.toIntOrNull() ?: Int.MIN_VALUE }
+
+          // Add sorted items to the main list
+          daroodList.addAll(tempList)
+
           daroodAdapter.notifyDataSetChanged()
           Log.d("Firestore", "Fetched ${documents.size()} documents")
         } else {

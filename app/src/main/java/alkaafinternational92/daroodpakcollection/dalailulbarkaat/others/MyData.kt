@@ -20,7 +20,7 @@ class MyData : Serializable {
 
   @SerializedName("font_size")
   @Expose
-  var font_size: Int = 17
+  var font_size: Int = 28
 
 
   @SerializedName("ln")
