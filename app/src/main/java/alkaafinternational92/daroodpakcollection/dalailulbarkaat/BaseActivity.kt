@@ -170,12 +170,30 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         }
         startActivity(Intent.createChooser(shareIntent, getString(R.string.share_via)))
       }
+      R.id.nav_youtube -> {
+        openYouTubeChannel()
+      }
     }
     val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
     drawerLayout.closeDrawer(GravityCompat.START)
     return true
   }
-  
+
+  fun openYouTubeChannel() {
+    val subscribeUrl = "https://www.youtube.com/@AlKaafInternational92"
+    try {
+      // Open in the YouTube app (if installed)
+      val appIntent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://www.youtube.com/@AlKaafInternational92"))
+      appIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+      startActivity(appIntent)
+    }
+    catch (e: Exception) {
+      // Fallback to web if the YouTube app is not installed
+      val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(subscribeUrl))
+      webIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+      startActivity(webIntent)
+    }
+  }
   private fun doEmail() {
     val email = getString(R.string.email_address)
     val subject = getString(R.string.email_subject)

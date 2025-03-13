@@ -21,6 +21,11 @@
       android:icon="@drawable/ic_settings"
       android:title="@string/settings"
       android:visible="true" />
+    <item
+      android:id="@+id/nav_youtube"
+      android:icon="@drawable/smart_display"
+      android:title="@string/youtube"
+      android:visible="true" />
   </group>
 
   <item android:title="@string/communicate">
