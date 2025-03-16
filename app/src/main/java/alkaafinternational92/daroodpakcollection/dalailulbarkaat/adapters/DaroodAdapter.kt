@@ -69,7 +69,7 @@ class DaroodAdapter(
 
       val email = context.getString(R.string.email_address)
       val subject = context.getString(R.string.report_subject)
-      val body = "Incorrect Darood Details:\n\n ID: ${tips.id} \nText: ${tips.name} \n\nCorrection:"
+      val body = "Incorrect Darood Details:\n\nType:$type \nID: ${tips.id} \nText: ${tips.name} \n\nCorrection:"
 
       val intent = Intent(Intent.ACTION_SENDTO).apply {
         data = Uri.parse("mailto:") // Ensures only email apps handle this

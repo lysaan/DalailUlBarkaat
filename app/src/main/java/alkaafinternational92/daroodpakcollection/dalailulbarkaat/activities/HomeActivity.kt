@@ -26,9 +26,6 @@ class HomeActivity  : BaseActivity() {
     val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
     menu = bottomNavigationView.menu
-//    menu[0].isCheckable = true
-
-
     loadFragment(DaroodFragment())
 
     bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -46,7 +43,6 @@ class HomeActivity  : BaseActivity() {
   override fun onResume() {
     super.onResume()
     base_nav_view.setCheckedItem(base_nav_view.menu.getItem(0))
-    loadFragment(DaroodFragment())
   }
 
 

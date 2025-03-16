@@ -87,7 +87,7 @@
 
             <TextView
               style="@style/battery_two_box_title"
-              android:text="@string/warid_ul_ghaib" />
+              android:text="@string/warid_ul_ghaib_with_urdu" />
 
             <TextView
               android:id="@+id/battery_cycle_count"
