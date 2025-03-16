@@ -1,5 +1,15 @@
 package alkaafinternational92.daroodpakcollection.dalailulbarkaat
 
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.HomeActivity
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.AppRater
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.DeviceDetails
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyData
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_DARK
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Utils
 import android.Manifest
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -18,19 +28,6 @@ import androidx.core.text.HtmlCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.SettingsActivity
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.MyBatteryInfo
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.AppRater
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.DeviceDetails
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyData
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_DARK
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.Utils
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.WaridUlGhaibActivity
 
 
 open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -98,11 +95,7 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     
     when (item.itemId) {
       R.id.nav_home -> {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-      }
-      R.id.nav_waridulghaib -> {
-        val intent = Intent(this, WaridUlGhaibActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
       }
       
@@ -138,11 +131,6 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
           }
         }
-      }
-      
-      R.id.nav_settings -> {
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
       }
       
       R.id.nav_email -> {

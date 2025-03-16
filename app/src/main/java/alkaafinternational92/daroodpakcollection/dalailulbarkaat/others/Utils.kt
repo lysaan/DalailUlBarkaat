@@ -9,6 +9,7 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.C
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.HomeActivity
 
 
 object Utils {
@@ -44,7 +45,7 @@ object Utils {
     
     activity.finish()
     
-    val intent = Intent(activity, activity.javaClass)
+    val intent = Intent(activity, HomeActivity::class.java)
     intent.putExtra("myData", dataNew)
     activity.startActivity(intent)
     activity.overridePendingTransition(

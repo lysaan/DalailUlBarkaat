@@ -39,6 +39,14 @@
     <string name="font1">Font: %1$d</string>
     <string name="email_address">alkaafinternational92@gmail.com</string>
     <string name="youtube">Visit Our YouTube Channel</string>
+    <string name="darood">Darood</string>
+    <string name="books">Books</string>
+    <string name="darood_pak">Darood Pak</string>
+    <string name="darood_pak_collection">Darood Pak Collection</string>
+    <string name="warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam">Warid Ul Ghaib Min Noor E Muhammadi Sallallhu Alaihi Wasalam</string>
+    <string name="theme_settings_saved">Theme settings saved successfully.</string>
+    <string name="munajat_rabb_al_bariyyah_bil_salat_al_ibrahimiya">Munajat Rabb al-Bariyyah bil-Salat al-Ibrahimiya</string>
+    <string name="munajat_rabb_al_bariyyah">Munajat Rabb al-Bariyyah</string>
 
 
 </resources>

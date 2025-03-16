@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:paddingBottom="@dimen/_10sdp"
+  tools:context=".fragments.SettingsFragment">
+
+  <TextView
+    android:id="@+id/settings_title"
+    style="@style/activity_title"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="@dimen/_20sdp"
+    android:text="@string/settings" />
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/settings_title"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/tv_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:text="@string/fon"
+        android:textSize="@dimen/_12sdp" />
+
+      <SeekBar
+        android:id="@+id/seekbar_font"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:max="100"
+        android:min="10"
+        android:progress="17" />
+
+      <TextView
+        android:id="@+id/font_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/darood_text" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:text="@string/theme"
+        android:textSize="@dimen/_12sdp" />
+
+      <RadioGroup
+        android:id="@+id/theme_group"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:focusable="false"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <RadioButton
+          android:id="@+id/system"
+          style="@style/settings_radio_three"
+          android:text="@string/system" />
+
+        <RadioButton
+          android:id="@+id/dark"
+          style="@style/settings_radio_three"
+          android:layout_marginStart="@dimen/_30sdp"
+          android:layout_marginEnd="@dimen/_30sdp"
+          android:text="@string/dark" />
+
+        <RadioButton
+          android:id="@+id/light"
+          style="@style/settings_radio_three"
+          android:text="@string/light" />
+      </RadioGroup>
+
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:text="@string/language_selection"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+      <Spinner
+        android:id="@+id/language_spinner"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="@drawable/spinner_border"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:text="Note: Languages translations are auto generated, if you find any issues please contact us."
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_9sdp"
+        android:visibility="gone" />
+
+    </LinearLayout>
+  </ScrollView>
+
+</RelativeLayout>
+
+

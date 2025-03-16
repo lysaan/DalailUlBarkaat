@@ -2,7 +2,6 @@ package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TEMP_UNIT_CELSIUS
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
 import java.io.Serializable
 
@@ -20,7 +19,7 @@ class MyData : Serializable {
 
   @SerializedName("font_size")
   @Expose
-  var font_size: Int = 28
+  var font_size: Int = 32
 
 
   @SerializedName("ln")
