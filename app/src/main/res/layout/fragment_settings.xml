@@ -3,6 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:orientation="vertical"
   android:paddingBottom="@dimen/_10sdp"
   tools:context=".fragments.SettingsFragment">
@@ -92,6 +93,36 @@
           android:text="@string/light" />
       </RadioGroup>
 
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:gravity="center_vertical">
+
+        <TextView
+          android:id="@+id/tv_alert"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentStart="true"
+          android:layout_centerInParent="true"
+          android:layout_marginStart="@dimen/_12sdp"
+          android:text="Translation"
+          android:textSize="@dimen/_12sdp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+          android:id="@+id/switch_toggle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_marginEnd="@dimen/_20sdp"
+          android:layout_marginStart="@dimen/_50sdp"
+          android:padding="8dp"
+          android:scaleX="1.6"
+          android:scaleY="1.6"
+          app:trackTint="@drawable/custom_switch_track" />
+      </RelativeLayout>
 
       <TextView
         android:layout_width="wrap_content"

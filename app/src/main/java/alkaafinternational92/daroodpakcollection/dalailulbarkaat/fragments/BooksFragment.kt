@@ -37,11 +37,6 @@ class BooksFragment : Fragment() {
       context.startActivity(intent)
     }
 
-    view.findViewById<LinearLayout>(R.id.munajat_rabb_al_bariyyah).setOnClickListener {
-      val intent = Intent(context, BooksActivity::class.java)
-      intent.putExtra("type", BOOK_TYPE_munajat_rabb_al_bariyyah)
-      context.startActivity(intent)
-    }
   }
 
 }

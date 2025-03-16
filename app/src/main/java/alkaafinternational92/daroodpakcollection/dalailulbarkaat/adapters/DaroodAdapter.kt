@@ -47,12 +47,12 @@ class DaroodAdapter(
     val tips = myDataList[position]
     name.text = tips.name
     id.text = tips.id
-    translation.text = tips.ur
 
-    if (tips.ur.isNullOrEmpty()) {
+    if (tips.ur.isNullOrEmpty() || !myHelper.getAppSettings().show_translation) {
       translation.visibility = View.GONE
     } else {
       translation.visibility = View.VISIBLE
+      translation.text = tips.ur
     }
 
     if (tips.youtube.isNullOrEmpty()) {
@@ -99,10 +99,8 @@ class DaroodAdapter(
       var message = "${tips.name} \n\n Download $appName:\n$playStoreUrl"
 
       when {
-        type === TYPE_DAROOD_PAK_COLLECTION -> {
-
-        }
-        type == TYPE_WARID_UL_GHAIB && !tips.ur.isNullOrEmpty() -> {
+        type === TYPE_DAROOD_PAK_COLLECTION -> {}
+        type == TYPE_WARID_UL_GHAIB && !tips.ur.isNullOrEmpty()  && myHelper.getAppSettings().show_translation -> {
           message = "${tips.name} \n\n ${tips.ur} \n\n Download $appName:\n$playStoreUrl"
         }
       }

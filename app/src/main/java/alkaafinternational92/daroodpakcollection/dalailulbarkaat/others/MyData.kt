@@ -25,6 +25,10 @@ class MyData : Serializable {
   @SerializedName("ln")
   @Expose
   var ln: String = "en"
+  
+  @SerializedName("translation")
+  @Expose
+  var show_translation: Boolean = true
 
 //  fun copy(): MyData {
 //    val copy = MyData()

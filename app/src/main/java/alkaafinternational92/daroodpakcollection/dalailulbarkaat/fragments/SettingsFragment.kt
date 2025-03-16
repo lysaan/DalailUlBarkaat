@@ -16,6 +16,7 @@ import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 
 class SettingsFragment : Fragment() {
@@ -32,6 +33,7 @@ class SettingsFragment : Fragment() {
   private lateinit var myHelper: MyHelper
   private lateinit var context: Context
   private var isUserInteraction = false
+  lateinit var switch_toggle: SwitchCompat
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +60,7 @@ class SettingsFragment : Fragment() {
     fontText = view.findViewById(R.id.font_text)
     seekbarFont = view.findViewById(R.id.seekbar_font)
     languageSpinner = view.findViewById(R.id.language_spinner)
+    switch_toggle = view.findViewById(R.id.switch_toggle)
 
 
     seekbarFont.progress = myHelper.getAppSettings().font_size
@@ -72,6 +75,8 @@ class SettingsFragment : Fragment() {
     val position = LanguageUtils.languages.indexOf(selectedLanguage)
     languageSpinner.setSelection(position)
 
+    switch_toggle.isChecked = myHelper.getAppSettings().show_translation
+
     seekbarFont.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
       override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
         tvFont.text = getString(R.string.font1, progress)
@@ -83,6 +88,19 @@ class SettingsFragment : Fragment() {
       override fun onStartTrackingTouch(seekBar: SeekBar?) {}
       override fun onStopTrackingTouch(seekBar: SeekBar?) {}
     })
+
+    switch_toggle.setOnCheckedChangeListener { buttonView, isChecked ->
+      if (isChecked) {
+        val appSettings = myHelper.getAppSettings()
+        appSettings.show_translation = true
+        myHelper.setAppSettings(appSettings)
+
+      } else {
+        val appSettings = myHelper.getAppSettings()
+        appSettings.show_translation = false
+        myHelper.setAppSettings(appSettings)
+      }
+    }
 
     theme_group.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
 //      if (isUserInteraction) {
