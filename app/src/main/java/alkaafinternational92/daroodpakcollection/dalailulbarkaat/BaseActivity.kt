@@ -1,10 +1,12 @@
 package alkaafinternational92.daroodpakcollection.dalailulbarkaat
 
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.BooksActivity
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.HomeActivity
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.AppRater
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.DeviceDetails
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyData
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.BOOK_TYPE_warid_ul_ghaib
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_DARK
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
@@ -96,6 +98,13 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     when (item.itemId) {
       R.id.nav_home -> {
         val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+      }
+
+      R.id.nav_waridulghaib -> {
+
+        val intent = Intent(this, BooksActivity::class.java)
+        intent.putExtra("type", BOOK_TYPE_warid_ul_ghaib)
         startActivity(intent)
       }
       

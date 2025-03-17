@@ -75,7 +75,7 @@ class BooksActivity : BaseActivity(), View.OnClickListener {
 
   override fun onResume() {
     super.onResume()
-    base_nav_view.setCheckedItem(base_nav_view.menu.getItem(0))
+    base_nav_view.setCheckedItem(base_nav_view.menu.getItem(1))
   }
 
   override fun onClick(v: View?) {

@@ -1,5 +1,6 @@
 package alkaafinternational92.daroodpakcollection.dalailulbarkaat.others
 
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
@@ -15,7 +16,7 @@ class MyData : Serializable {
   // system = 0, dark = 1, light = 2
   @SerializedName("theme")
   @Expose
-  var theme: Int = THEME_SYSTEM
+  var theme: Int = THEME_LIGHT
 
   @SerializedName("font_size")
   @Expose
