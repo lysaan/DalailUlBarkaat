@@ -7,7 +7,7 @@
     android:id="@+id/appwidget_text"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_foreground"
+    android:background="@mipmap/ic_launcher"
     android:contentDescription="@string/override_name"
     android:scaleType="centerInside" />
 

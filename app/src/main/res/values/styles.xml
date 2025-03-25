@@ -16,7 +16,7 @@
   </style>
 
   <style name="splashScreenTheme" parent="@style/AppTheme.NoActionBar">
-    <item name="android:windowBackground">@drawable/battery_saver</item>
+    <item name="android:windowBackground">@mipmap/ic_launcher</item>
   </style>
 
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
