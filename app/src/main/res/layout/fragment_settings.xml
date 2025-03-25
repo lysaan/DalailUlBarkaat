@@ -55,6 +55,7 @@
         android:textColor="@color/colorPrimary"
         android:layout_marginBottom="@dimen/_20sdp"
         android:gravity="center_horizontal"
+        android:fontFamily="@font/al_majeed_quranic_font"
         android:text="@string/darood_text" />
 
       <TextView

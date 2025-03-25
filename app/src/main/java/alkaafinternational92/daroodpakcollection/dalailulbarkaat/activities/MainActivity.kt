@@ -4,13 +4,18 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.adapters.DaroodAdapter
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.Darood
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_DARK
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_LIGHT
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_DAROOD_PAK_COLLECTION
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_WARID_UL_GHAIB
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -39,17 +44,39 @@ class MainActivity : BaseActivity(), View.OnClickListener {
       type = bundle.getInt("type")
     }
 
+    var textColor = ContextCompat.getColor(this@MainActivity, R.color.colorPrimary)
+
+    when (myHelper.getAppSettings().theme) {
+      THEME_DARK -> {
+        textColor = ContextCompat.getColor(this@MainActivity, R.color.white)
+      }
+
+      THEME_LIGHT -> {
+        textColor = ContextCompat.getColor(this@MainActivity, R.color.colorPrimary)
+      }
+
+      THEME_SYSTEM -> {
+        val isDarkTheme = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        myHelper.log("changeToTheme:$isDarkTheme")
+        if (isDarkTheme) {
+          textColor = ContextCompat.getColor(this@MainActivity, R.color.white)
+        } else {
+          textColor = ContextCompat.getColor(this@MainActivity, R.color.colorPrimary)
+        }
+      }
+    }
+
     when(type){
       TYPE_DAROOD_PAK_COLLECTION -> {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList,)
+        daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.darood_pak_collection)
         fetchDaroodData()
       }
       TYPE_WARID_UL_GHAIB -> {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        daroodAdapter = DaroodAdapter(this@MainActivity,type, waridUlGhaibList)
+        daroodAdapter = DaroodAdapter(this@MainActivity,type, waridUlGhaibList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam)
         fetchWaridUlGhaibData()

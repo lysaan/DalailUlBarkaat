@@ -41,8 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_8sdp"
-        android:fontFamily="@font/arab_quran"
-        android:textFontWeight="600"
+        android:fontFamily="@font/al_majeed_quranic_font"
         android:text="@string/darood_text" />
 
       <TextView

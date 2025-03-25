@@ -1,16 +1,12 @@
 package alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities
 
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.BaseActivity
-import android.os.Bundle
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.adapters.DaroodAdapter
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.BOOK_TYPE_munajat_rabb_al_bariyyah
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.BOOK_TYPE_warid_ul_ghaib
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_DAROOD_PAK_COLLECTION
-import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_WARID_UL_GHAIB
+import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.barteksc.pdfviewer.PDFView
 
 class BooksActivity : BaseActivity(), View.OnClickListener {

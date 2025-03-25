@@ -20,7 +20,8 @@ import androidx.recyclerview.widget.RecyclerView
 class DaroodAdapter(
   val context: Activity,
   val type: Int,
-  private val myDataList: List<Darood>
+  private val myDataList: List<Darood>,
+  val textColor: Int
 ) : RecyclerView.Adapter<DaroodAdapter.ViewHolder>() {
   
   private val tag1 = this::class.java.simpleName
@@ -47,6 +48,10 @@ class DaroodAdapter(
     val tips = myDataList[position]
     name.text = tips.name
     id.text = tips.id
+
+    id.setTextColor(textColor)
+    name.setTextColor(textColor)
+    translation.setTextColor(textColor)
 
     if (tips.ur.isNullOrEmpty() || !myHelper.getAppSettings().show_translation) {
       translation.visibility = View.GONE
