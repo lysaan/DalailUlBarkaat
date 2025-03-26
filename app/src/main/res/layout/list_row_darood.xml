@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_8sdp"
-        android:fontFamily="@font/notonaskharabic_variablefont_wght"
+        android:fontFamily="@font/jameel_noori_nastalee_regular"
         android:text="@string/darood_text" />
 
       <RelativeLayout

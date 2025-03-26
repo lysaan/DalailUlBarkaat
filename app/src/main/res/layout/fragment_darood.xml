@@ -48,6 +48,7 @@
             android:orientation="vertical">
 
             <TextView
+              android:id="@+id/darood_pak_count"
               style="@style/battery_two_box_title"
               android:text="@string/darood_pak" />
 
@@ -86,6 +87,7 @@
             android:orientation="vertical">
 
             <TextView
+              android:id="@+id/warid_ul_ghaib_count"
               style="@style/battery_two_box_title"
               android:text="@string/warid_ul_ghaib_with_urdu" />
 
