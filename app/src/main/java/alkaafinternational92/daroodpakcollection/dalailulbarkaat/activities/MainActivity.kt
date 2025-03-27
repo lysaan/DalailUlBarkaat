@@ -15,13 +15,17 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.C
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_munajat_bisalat_ibrahimia
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -30,6 +34,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   private lateinit var recyclerView: RecyclerView
   private lateinit var title: TextView
   private lateinit var last_seen: TextView
+  private lateinit var speedTextView: TextView
+  private lateinit var play: ImageView
+  private lateinit var plus: ImageView
+  private lateinit var minus: ImageView
+  private var isScrooling = false
+
   private lateinit var daroodAdapter: DaroodAdapter
   private val daroodList = ArrayList<Darood>()
   private val waridUlGhaibList = ArrayList<Darood>()
@@ -37,6 +47,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   private val duainList = ArrayList<Darood>()
   private val db = FirebaseFirestore.getInstance()
   private var type = TYPE_DAROOD_PAK_COLLECTION
+
+  private var handler: Handler? = null
+  private var scrollRunnable: Runnable? = null
+  private var scrollSpeed = 5 // Default speed (change for faster/slower scrolling)
+  private var scrollDelay = 50L // Default delay in milliseconds
+
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -46,6 +62,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     recyclerView = findViewById(R.id.rv)
     title = findViewById(R.id.title)
     last_seen = findViewById(R.id.last_seen)
+    play = findViewById(R.id.play)
+    plus = findViewById(R.id.plus)
+    minus = findViewById(R.id.minus)
+    speedTextView = findViewById(R.id.speedTextView)
 
     val bundle: Bundle? = intent.extras
     if (bundle != null) {
@@ -107,6 +127,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     last_seen.setOnClickListener(this)
+    play.setOnClickListener(this)
+    plus.setOnClickListener(this)
+    minus.setOnClickListener(this)
 
   }
 
@@ -133,6 +156,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   override fun onClick(v: View?) {
     when (v!!.id) {
       R.id.last_seen -> {
+//        autoScrool()
         val appSettings = myHelper.getAppSettings()
         var id = "1"
         when {
@@ -154,7 +178,72 @@ class MainActivity : BaseActivity(), View.OnClickListener {
           }
         }
       }
+
+      R.id.play -> {
+        if(isScrooling){
+          stopAutoScroll()
+          Glide.with(this@MainActivity).load(R.drawable.play).into(play)
+          isScrooling = false
+        }else{
+          startAutoScroll()
+          Glide.with(this@MainActivity).load(R.drawable.pause).into(play)
+          isScrooling = true
+        }
+      }
+
+      R.id.plus -> { increaseSpeed()}
+      R.id.minus -> {decreaseSpeed()}
     }
+  }
+  private fun startAutoScroll() {
+    stopAutoScroll() // Prevent duplicate handlers
+
+    handler = Handler(Looper.getMainLooper())
+    scrollRunnable = object : Runnable {
+      override fun run() {
+        recyclerView.smoothScrollBy(0, scrollSpeed) // Adjust speed dynamically
+        handler?.postDelayed(this, scrollDelay) // Delay adjusts based on speed
+      }
+    }
+    handler?.postDelayed(scrollRunnable!!, scrollDelay)
+  }
+
+  private fun stopAutoScroll() {
+    handler?.removeCallbacks(scrollRunnable!!)
+  }
+
+  // Speed levels: 1 to 10 (can go beyond for high speed)
+  private val speedLevels = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  private var currentSpeedIndex = 4 // Default: 5
+
+  private fun updateSpeedDisplay() {
+    speedTextView.text = "$scrollSpeed X"
+  }
+
+
+  private fun increaseSpeed() {
+    if (currentSpeedIndex < speedLevels.size - 1) { // Ensure it does NOT exceed 10
+      currentSpeedIndex++
+      scrollSpeed = speedLevels[currentSpeedIndex]
+      scrollDelay = maxOf(5L, 100L - (scrollSpeed * 5)) // Adjust delay
+      updateSpeedDisplay()
+      restartAutoScroll()
+    }
+  }
+
+  private fun decreaseSpeed() {
+    if (currentSpeedIndex > 0) { // Ensure it does NOT go below 1
+      currentSpeedIndex--
+      scrollSpeed = speedLevels[currentSpeedIndex]
+      scrollDelay = minOf(100L, scrollDelay + 10) // Adjust delay
+      updateSpeedDisplay()
+      restartAutoScroll()
+    }
+  }
+
+  private fun restartAutoScroll() {
+    stopAutoScroll()
+    startAutoScroll()
   }
 
   fun saveLastSeen(tips: Darood) {
