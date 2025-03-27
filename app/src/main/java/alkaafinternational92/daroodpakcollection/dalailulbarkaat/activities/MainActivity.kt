@@ -293,7 +293,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             val id = document.id
             val name = document.getString("n") ?: "No darood found"
             val youtube = document.getString("y")?.takeIf { it.isNotBlank() }
-            tempList.add(Darood(id, name, youtube))
+            val ur = document.getString("ur")?.takeIf { it.isNotBlank() }
+            tempList.add(Darood(id, name, youtube, ur))
           }
           when(sort_type){
             SORT_TYPE_DESC -> { tempList.sortByDescending { it.id.toIntOrNull() ?: Int.MIN_VALUE } }

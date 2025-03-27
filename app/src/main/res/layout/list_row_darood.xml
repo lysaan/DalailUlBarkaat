@@ -42,7 +42,7 @@
 
         <ImageView
           android:id="@+id/favorite"
-          android:visibility="visible"
+          android:visibility="invisible"
           android:layout_width="@dimen/_20sdp"
           android:layout_alignParentEnd="true"
           android:layout_height="@dimen/_20sdp"
