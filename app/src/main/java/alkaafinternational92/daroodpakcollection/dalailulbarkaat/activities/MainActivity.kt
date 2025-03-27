@@ -182,12 +182,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
       R.id.play -> {
         if(isScrooling){
           stopAutoScroll()
-          Glide.with(this@MainActivity).load(R.drawable.play).into(play)
-          isScrooling = false
         }else{
           startAutoScroll()
-          Glide.with(this@MainActivity).load(R.drawable.pause).into(play)
-          isScrooling = true
         }
       }
 
@@ -206,10 +202,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
       }
     }
     handler?.postDelayed(scrollRunnable!!, scrollDelay)
+    Glide.with(this@MainActivity).load(R.drawable.pause).into(play)
+    isScrooling = true
   }
 
   private fun stopAutoScroll() {
     handler?.removeCallbacks(scrollRunnable!!)
+    Glide.with(this@MainActivity).load(R.drawable.play).into(play)
+    isScrooling = false
   }
 
   // Speed levels: 1 to 10 (can go beyond for high speed)
