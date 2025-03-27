@@ -4,6 +4,7 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_DAROOD_PAK_COLLECTION
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_WARID_UL_GHAIB
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_duain
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_munajat_bisalat_ibrahimia
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
 import android.content.Context
@@ -56,14 +57,22 @@ class DaroodFragment : Fragment() {
       context.startActivity(intent)
     }
 
+    view.findViewById<LinearLayout>(R.id.duain).setOnClickListener {
+      val intent = Intent(context, MainActivity::class.java)
+      intent.putExtra("type", TYPE_duain)
+      context.startActivity(intent)
+    }
+
     lifecycleScope.launch {
       val count = countDarood("ar")
       val count_warid_ul_ghaib = countDarood("warid_ul_ghaib")
       val count_munajat_bisalat_ibrahimia = countDarood("munajat_bisalat_ibrahimia")
+      val count_duain = countDarood("duain")
       myHelper.log("Total documents in 'ar': $count")
       view.findViewById<TextView>(R.id.darood_pak_count).text = getString(R.string.darood_pak1, count)
       view.findViewById<TextView>(R.id.warid_ul_ghaib_count).text = getString(R.string.warid_ul_ghaib_with_urdu1, count_warid_ul_ghaib)
       view.findViewById<TextView>(R.id.silsilat_dua_al_munfarid_biallah).text = getString(R.string.silsilat_dua_al_munfarid_biallah1, count_munajat_bisalat_ibrahimia)
+      view.findViewById<TextView>(R.id.duain_text).text = getString(R.string.duain1, count_duain)
     }
 
   }

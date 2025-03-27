@@ -12,7 +12,9 @@
     android:id="@+id/activity_title"
     style="@style/activity_title"
     android:layout_marginBottom="@dimen/_10sdp"
-    android:text="@string/darood_pak" />
+    android:fontFamily="@font/jameel_noori_nastalee_regular"
+    android:textSize="@dimen/_22sdp"
+    android:text="@string/dalail_ul_albarkaat" />
 
   <ScrollView
     android:layout_width="match_parent"
@@ -53,9 +55,16 @@
               android:text="@string/darood_pak" />
 
             <TextView
-              android:id="@+id/battery_capacity"
               style="@style/battery_two_box_text"
+              android:layout_marginBottom="0dp"
               android:text="@string/darood_pak_collection" />
+
+            <TextView
+              style="@style/battery_two_box_text"
+              android:layout_marginTop="0dp"
+              android:fontFamily="@font/jameel_noori_nastalee_regular"
+              android:textSize="@dimen/_20sdp"
+              android:text="@string/mujmuah_darood_pak" />
 
 
           </LinearLayout>
@@ -66,7 +75,7 @@
         android:id="@+id/warid_ul_ghaib"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
@@ -97,6 +106,12 @@
               android:gravity="center"
               android:text="@string/warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam" />
 
+            <TextView
+              style="@style/battery_two_box_text"
+              android:layout_marginTop="0dp"
+              android:fontFamily="@font/jameel_noori_nastalee_regular"
+              android:textSize="@dimen/_20sdp"
+              android:text="@string/warid_ul_gaib_urdu" />
 
           </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -106,7 +121,7 @@
         android:id="@+id/munajat_bisalat_ibrahimia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
@@ -136,6 +151,56 @@
               android:gravity="center"
               android:text="@string/munajat_rabb_al_bariyyah_bil_salat_al_ibrahimiya" />
 
+            <TextView
+              style="@style/battery_two_box_text"
+              android:layout_marginTop="0dp"
+              android:fontFamily="@font/jameel_noori_nastalee_regular"
+              android:textSize="@dimen/_20sdp"
+              android:text="@string/manajaat_urdu" />
+
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+      </LinearLayout><LinearLayout
+        android:id="@+id/duain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+          style="?attr/cardStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/_5sdp"
+          android:layout_weight=".5"
+          app:cardCornerRadius="@dimen/_8sdp"
+          app:cardElevation="@dimen/_8sdp"
+          app:cardMaxElevation="@dimen/_10sdp"
+          app:contentPadding="@dimen/_5sdp">
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+              android:id="@+id/duain_text"
+              style="@style/battery_two_box_title"
+              android:text="@string/duain" />
+
+            <TextView
+              style="@style/battery_two_box_text"
+              android:gravity="center"
+              android:text="@string/ism_e_azam_and_prayers" />
+
+            <TextView
+              style="@style/battery_two_box_text"
+              android:layout_marginTop="0dp"
+              android:fontFamily="@font/jameel_noori_nastalee_regular"
+              android:textSize="@dimen/_20sdp"
+              android:text="@string/taqdeer_duain" />
 
           </LinearLayout>
         </androidx.cardview.widget.CardView>

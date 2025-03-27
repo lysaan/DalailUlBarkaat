@@ -1,6 +1,7 @@
 package alkaafinternational92.daroodpakcollection.dalailulbarkaat.adapters
 
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.activities.MainActivity
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.Darood
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_DAROOD_PAK_COLLECTION
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_WARID_UL_GHAIB
@@ -41,7 +42,9 @@ class DaroodAdapter(
     val youtube = v.findViewById<ImageView>(R.id.youtube)
     val report = v.findViewById<ImageView>(R.id.report)
     val share = v.findViewById<ImageView>(R.id.share)
+    val last_seen = v.findViewById<ImageView>(R.id.last_seen)
     val id = v.findViewById<TextView>(R.id.id)
+    val favorite = v.findViewById<ImageView>(R.id.favorite)
 
     name.textSize = myHelper.getAppSettings().font_size.toFloat()
     translation.textSize = myHelper.getAppSettings().font_size.toFloat()
@@ -95,6 +98,10 @@ class DaroodAdapter(
         )
       }
 
+    }
+
+    last_seen.setOnClickListener {
+      (context as MainActivity).saveLastSeen(tips)
     }
 
     share.setOnClickListener {

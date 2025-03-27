@@ -31,6 +31,11 @@ class MyData : Serializable {
   @Expose
   var show_translation: Boolean = true
 
+  var last_seen_TYPE_DAROOD_PAK_COLLECTION : String = "1"
+  var last_seen_TYPE_WARID_UL_GHAIB : String = "1"
+  var last_seen_TYPE_munajat_bisalat_ibrahimia : String = "1"
+  var last_seen_TYPE_duain : String = "1"
+
 //  fun copy(): MyData {
 //    val copy = MyData()
 //    copy.name = this.name

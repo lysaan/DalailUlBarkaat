@@ -6,21 +6,43 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:paddingBottom="@dimen/_10sdp"
+  android:layout_margin="@dimen/_5sdp"
 tools:context=".activities.MainActivity">
 
+    <LinearLayout
+      android:id="@+id/title_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginStart="@dimen/_5sdp"
+      android:layout_alignParentTop="true">
+        <TextView
+          android:id="@+id/last_seen"
+          style="@style/battery_two_box_text"
+          android:layout_width="0dp"
+          android:layout_weight=".2"
+          android:textSize="@dimen/_12sdp"
+          android:drawablePadding="@dimen/_5sdp"
+          android:gravity="center_vertical"
+          android:paddingTop="@dimen/_5sdp"
+          app:drawableLeftCompat="@drawable/visibility" />
 
-    <TextView
-        android:id="@+id/title"
-        style="@style/activity_title"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/_10sdp"
-      android:gravity="center_horizontal"
-        android:text="@string/override_name" />
+
+        <TextView
+          android:id="@+id/title"
+          style="@style/battery_two_box_text"
+          android:gravity="center"
+          android:layout_width="0dp"
+          android:layout_weight=".7"
+          android:layout_margin="@dimen/_5sdp"
+          android:text="@string/override_name" />
+
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
-        android:layout_below="@id/title"
+        android:layout_below="@id/title_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -43,8 +43,8 @@
     <string name="darood">Darood</string>
     <string name="books">Books</string>
     <string name="darood_pak">Darood Pak</string>
-    <string name="darood_pak_collection">Darood Pak Collection</string>
-    <string name="warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam">Warid Ul Ghaib Min Noor E Muhammadi Sallallhu Alaihi Wa Aali Wasalam</string>
+    <string name="darood_pak_collection">Darood Pak Collection </string>
+    <string name="warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam">Warid Ul Ghaib Min Noor E Muhammadi Sallallahu Allaihi Wa Aalehi Wasalam</string>
     <string name="theme_settings_saved">Theme settings saved successfully.</string>
     <string name="munajat_rabb_al_bariyyah_bil_salat_al_ibrahimiya">Munajat Rabb al-Bariyyah bil-Salat al-Ibrahimiya</string>
     <string name="munajat_rabb_al_bariyyah">Munajat Rabb al-Bariyyah</string>
@@ -52,6 +52,16 @@
     <string name="warid_ul_ghaib_with_urdu1">Warid Ul Ghaib [With Urdu] (%1$d)</string>
     <string name="silsilat_dua_al_munfarid_biallah">Silsilat Dua Al Munfarid Biallah</string>
     <string name="silsilat_dua_al_munfarid_biallah1">Silsilat Dua Al Munfarid Biallah (%1$d)</string>
+    <string name="dalail_ul_albarkaat">دلائلُ البرکات</string>
+    <string name="mujmuah_darood_pak">مجموعہ درود پاک</string>
+    <string name="warid_ul_gaib_urdu">غیب ظاہر ہوا محمد ﷺ کے نور سے</string>
+    <string name="manajaat_urdu">مناجاة رب البرية بالصلاة الإبراهيمية</string>
+    <string name="duain">Duain</string>
+    <string name="duain1">Duain (%1$d)</string>
+    <string name="halal_al_mushkilat">Halal al Mushkilat</string>
+    <string name="taqdeer_duain">تقدیر بدل دینے والی دعائیں</string>
+    <string name="ism_e_azam_and_prayers">Ism e Azam and Prayers</string>
+    <string name="last_seen">Last seen: %1$s</string>
 
 
 </resources>
