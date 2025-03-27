@@ -9,6 +9,7 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.C
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.THEME_SYSTEM
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_DAROOD_PAK_COLLECTION
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_WARID_UL_GHAIB
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_munajat_bisalat_ibrahimia
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +29,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   private lateinit var daroodAdapter: DaroodAdapter
   private val daroodList = ArrayList<Darood>()
   private val waridUlGhaibList = ArrayList<Darood>()
+  private val munajat_bisalat_ibrahimiaList = ArrayList<Darood>()
   private val db = FirebaseFirestore.getInstance()
   private var type = TYPE_DAROOD_PAK_COLLECTION
 
@@ -72,14 +74,22 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.darood_pak_collection)
-        fetchDaroodData()
+        fetchDaroodData(daroodList, "ar")
+
       }
       TYPE_WARID_UL_GHAIB -> {
         recyclerView.layoutManager = LinearLayoutManager(this)
         daroodAdapter = DaroodAdapter(this@MainActivity,type, waridUlGhaibList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam)
-        fetchWaridUlGhaibData()
+        fetchDaroodData(waridUlGhaibList, "warid_ul_ghaib")
+      }
+      TYPE_munajat_bisalat_ibrahimia -> {
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        daroodAdapter = DaroodAdapter(this@MainActivity,type, munajat_bisalat_ibrahimiaList, textColor)
+        recyclerView.adapter = daroodAdapter
+        title.text = getString(R.string.munajat_rabb_al_bariyyah_bil_salat_al_ibrahimiya)
+        fetchDaroodData(munajat_bisalat_ibrahimiaList, "munajat_bisalat_ibrahimia")
       }
     }
 
@@ -100,11 +110,11 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
   }
 
-  private fun fetchDaroodData() {
+  private fun fetchDaroodData(daroodList: ArrayList<Darood>, collection: String) {
     myHelper.showDialog()
     db?.collection("daroodarabic")
       ?.document("Uzcijxle9p4leTfWJBxs") // Main document
-      ?.collection("ar") // Fetch all documents inside "ar"
+      ?.collection(collection) // Fetch all documents inside "ar"
       ?.get()
       ?.addOnSuccessListener { documents ->
         if (!documents.isEmpty) {
@@ -120,41 +130,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
           }
           tempList.sortByDescending { it.id.toIntOrNull() ?: Int.MIN_VALUE }
           daroodList.addAll(tempList)
-          daroodAdapter.notifyDataSetChanged()
-          Log.d("Firestore", "Fetched ${documents.size()} documents")
-          myHelper.hideDialog()
-        } else {
-          myHelper.hideDialog()
-          Log.w("Firestore", "No documents found in 'ar' collection")
-        }
-      }
-      ?.addOnFailureListener { e ->
-        myHelper.hideDialog()
-        Log.e("Firestore", "Error getting documents", e)
-      }
-  }
-  private fun fetchWaridUlGhaibData() {
-    myHelper.showDialog()
-    db?.collection("daroodarabic")
-      ?.document("Uzcijxle9p4leTfWJBxs") // Main document
-      ?.collection("warid_ul_ghaib") // Fetch all documents inside "ar"
-      ?.get()
-      ?.addOnSuccessListener { documents ->
-        if (!documents.isEmpty) {
-          waridUlGhaibList.clear() // Clear list before adding new data
-
-          val tempList = mutableListOf<Darood>()
-
-          for (document in documents) {
-            val id = document.id
-            val name = document.getString("n") ?: "No darood found"
-            val youtube = document.getString("y")?.takeIf { it.isNotBlank() }
-            val ur = document.getString("ur")?.takeIf { it.isNotBlank() }
-            tempList.add(Darood(id, name, youtube, ur))
-          }
-          tempList.sortBy { it.id.toIntOrNull() ?: Int.MAX_VALUE }
-          waridUlGhaibList.addAll(tempList)
-
           daroodAdapter.notifyDataSetChanged()
           Log.d("Firestore", "Fetched ${documents.size()} documents")
           myHelper.hideDialog()

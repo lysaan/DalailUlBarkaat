@@ -4,6 +4,7 @@ import alkaafinternational92.daroodpakcollection.dalailulbarkaat.R
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.classes.Darood
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_DAROOD_PAK_COLLECTION
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_WARID_UL_GHAIB
+import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyEnum.Companion.TYPE_munajat_bisalat_ibrahimia
 import alkaafinternational92.daroodpakcollection.dalailulbarkaat.others.MyHelper
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -105,6 +106,7 @@ class DaroodAdapter(
 
       when {
         type === TYPE_DAROOD_PAK_COLLECTION -> {}
+        type === TYPE_munajat_bisalat_ibrahimia -> {}
         type == TYPE_WARID_UL_GHAIB && !tips.ur.isNullOrEmpty()  && myHelper.getAppSettings().show_translation -> {
           message = "${tips.name} \n\n ${tips.ur} \n\n Download $appName:\n$playStoreUrl"
         }

@@ -50,6 +50,8 @@
     <string name="munajat_rabb_al_bariyyah">Munajat Rabb al-Bariyyah</string>
     <string name="darood_pak1">Darood Pak (%1$d)</string>
     <string name="warid_ul_ghaib_with_urdu1">Warid Ul Ghaib [With Urdu] (%1$d)</string>
+    <string name="silsilat_dua_al_munfarid_biallah">Silsilat Dua Al Munfarid Biallah</string>
+    <string name="silsilat_dua_al_munfarid_biallah1">Silsilat Dua Al Munfarid Biallah (%1$d)</string>
 
 
 </resources>
