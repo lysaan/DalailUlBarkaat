@@ -95,7 +95,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         daroodAdapter = DaroodAdapter(this@MainActivity,type, munajat_bisalat_ibrahimiaList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.munajat_rabb_al_bariyyah_bil_salat_al_ibrahimiya)
-        fetchDaroodData(munajat_bisalat_ibrahimiaList, "munajat_bisalat_ibrahimia")
+        fetchDaroodData(munajat_bisalat_ibrahimiaList, "munajat_bisalat_ibrahimia", SORT_TYPE_ASC)
       }
       TYPE_duain -> {
         recyclerView.layoutManager = LinearLayoutManager(this)

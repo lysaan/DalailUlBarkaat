@@ -62,6 +62,7 @@
     <string name="taqdeer_duain">تقدیر بدل دینے والی دعائیں</string>
     <string name="ism_e_azam_and_prayers">Ism e Azam and Prayers</string>
     <string name="last_seen">Last seen: %1$s</string>
+    <string name="please_connect_to_internet_for_latest_data">Please connect to Internet for latest data</string>
 
 
 </resources>

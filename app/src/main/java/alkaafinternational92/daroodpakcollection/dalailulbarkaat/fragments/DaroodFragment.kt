@@ -27,6 +27,7 @@ class DaroodFragment : Fragment() {
   private lateinit var myHelper: MyHelper
   private lateinit var context: Context
   private val db = FirebaseFirestore.getInstance()
+  private var rootView: View? = null
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
@@ -38,6 +39,7 @@ class DaroodFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
     myHelper = MyHelper("DaroodFragment", requireContext())
     context = requireContext()
+    rootView = view // Store reference to root view
 
     view.findViewById<LinearLayout>(R.id.darood_pak_collection).setOnClickListener {
       val intent = Intent(context, MainActivity::class.java)
@@ -62,19 +64,51 @@ class DaroodFragment : Fragment() {
       intent.putExtra("type", TYPE_duain)
       context.startActivity(intent)
     }
+    fetchData(view)
+  }
 
+  override fun onResume() {
+    super.onResume()
+    myHelper.log("onResume")
+    rootView?.let { fetchData(it) } // Call fetchData safely
+  }
+
+  private fun fetchData(view: View) {
     lifecycleScope.launch {
       val count = countDarood("ar")
       val count_warid_ul_ghaib = countDarood("warid_ul_ghaib")
       val count_munajat_bisalat_ibrahimia = countDarood("munajat_bisalat_ibrahimia")
       val count_duain = countDarood("duain")
       myHelper.log("Total documents in 'ar': $count")
-      view.findViewById<TextView>(R.id.darood_pak_count).text = getString(R.string.darood_pak1, count)
-      view.findViewById<TextView>(R.id.warid_ul_ghaib_count).text = getString(R.string.warid_ul_ghaib_with_urdu1, count_warid_ul_ghaib)
-      view.findViewById<TextView>(R.id.silsilat_dua_al_munfarid_biallah).text = getString(R.string.silsilat_dua_al_munfarid_biallah1, count_munajat_bisalat_ibrahimia)
-      view.findViewById<TextView>(R.id.duain_text).text = getString(R.string.duain1, count_duain)
+      if(count == null){
+        view.findViewById<TextView>(R.id.count_0).visibility = View.VISIBLE
+      }
+      else{
+        view.findViewById<TextView>(R.id.darood_pak_count).text = getString(R.string.darood_pak1, count)
+        view.findViewById<TextView>(R.id.count_0).visibility = View.GONE
+      }
+      if(count_warid_ul_ghaib == null){
+        view.findViewById<TextView>(R.id.count_0).visibility = View.VISIBLE
+      }
+      else{
+        view.findViewById<TextView>(R.id.warid_ul_ghaib_count).text = getString(R.string.warid_ul_ghaib_with_urdu1, count_warid_ul_ghaib)
+        view.findViewById<TextView>(R.id.count_0).visibility = View.GONE
+      }
+      if(count_munajat_bisalat_ibrahimia == null){
+        view.findViewById<TextView>(R.id.count_0).visibility = View.VISIBLE
+      }
+      else{
+        view.findViewById<TextView>(R.id.silsilat_dua_al_munfarid_biallah).text = getString(R.string.silsilat_dua_al_munfarid_biallah1, count_munajat_bisalat_ibrahimia)
+        view.findViewById<TextView>(R.id.count_0).visibility = View.GONE
+      }
+      if(count_duain == null){
+        view.findViewById<TextView>(R.id.count_0).visibility = View.VISIBLE
+      }
+      else{
+        view.findViewById<TextView>(R.id.duain_text).text = getString(R.string.duain1, count_duain)
+        view.findViewById<TextView>(R.id.count_0).visibility = View.GONE
+      }
     }
-
   }
 
   suspend fun countDarood(list_name: String): Long? {

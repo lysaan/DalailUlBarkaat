@@ -11,10 +11,19 @@
   <TextView
     android:id="@+id/activity_title"
     style="@style/activity_title"
-    android:layout_marginBottom="@dimen/_10sdp"
+    android:layout_marginBottom="0dp"
     android:fontFamily="@font/jameel_noori_nastalee_regular"
     android:textSize="@dimen/_22sdp"
     android:text="@string/dalail_ul_albarkaat" />
+  <TextView
+    android:id="@+id/count_0"
+    android:visibility="gone"
+    style="@style/battery_two_box_title"
+    android:layout_marginTop="0dp"
+    android:textColor="@color/red"
+    android:layout_gravity="center_horizontal"
+    android:text="@string/please_connect_to_internet_for_latest_data" />
+
 
   <ScrollView
     android:layout_width="match_parent"
