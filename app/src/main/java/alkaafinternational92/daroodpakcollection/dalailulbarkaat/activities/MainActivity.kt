@@ -35,6 +35,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   private lateinit var title: TextView
   private lateinit var last_seen: TextView
   private lateinit var speedTextView: TextView
+  private lateinit var start: TextView
+  private lateinit var end: TextView
+  private lateinit var sort: TextView
   private lateinit var play: ImageView
   private lateinit var plus: ImageView
   private lateinit var minus: ImageView
@@ -42,9 +45,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
   private lateinit var daroodAdapter: DaroodAdapter
   private val daroodList = ArrayList<Darood>()
-  private val waridUlGhaibList = ArrayList<Darood>()
-  private val munajat_bisalat_ibrahimiaList = ArrayList<Darood>()
-  private val duainList = ArrayList<Darood>()
   private val db = FirebaseFirestore.getInstance()
   private var type = TYPE_DAROOD_PAK_COLLECTION
 
@@ -66,6 +66,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     plus = findViewById(R.id.plus)
     minus = findViewById(R.id.minus)
     speedTextView = findViewById(R.id.speedTextView)
+    start = findViewById(R.id.start)
+    end = findViewById(R.id.end)
+    sort = findViewById(R.id.sort)
 
     val bundle: Bundle? = intent.extras
     if (bundle != null) {
@@ -100,29 +103,29 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.darood_pak_collection)
-        fetchDaroodData(daroodList, "ar")
+        fetchDaroodData( "ar")
 
       }
       TYPE_WARID_UL_GHAIB -> {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        daroodAdapter = DaroodAdapter(this@MainActivity,type, waridUlGhaibList, textColor)
+        daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.warid_ul_ghaib_min_noor_e_muhammadi_sallallhu_alaihi_wasalam)
-        fetchDaroodData(waridUlGhaibList, "warid_ul_ghaib", SORT_TYPE_ASC)
+        fetchDaroodData( "warid_ul_ghaib", SORT_TYPE_ASC)
       }
       TYPE_munajat_bisalat_ibrahimia -> {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        daroodAdapter = DaroodAdapter(this@MainActivity,type, munajat_bisalat_ibrahimiaList, textColor)
+        daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.munajat_rabb_al_bariyyah_bil_salat_al_ibrahimiya)
-        fetchDaroodData(munajat_bisalat_ibrahimiaList, "munajat_bisalat_ibrahimia", SORT_TYPE_ASC)
+        fetchDaroodData( "munajat_bisalat_ibrahimia", SORT_TYPE_ASC)
       }
       TYPE_duain -> {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        daroodAdapter = DaroodAdapter(this@MainActivity,type, duainList, textColor)
+        daroodAdapter = DaroodAdapter(this@MainActivity,type, daroodList, textColor)
         recyclerView.adapter = daroodAdapter
         title.text = getString(R.string.ism_e_azam_and_prayers)
-        fetchDaroodData(duainList, "duain")
+        fetchDaroodData( "duain")
       }
     }
 
@@ -130,6 +133,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     play.setOnClickListener(this)
     plus.setOnClickListener(this)
     minus.setOnClickListener(this)
+    start.setOnClickListener(this)
+    end.setOnClickListener(this)
+    sort.setOnClickListener(this)
 
   }
 
@@ -156,25 +162,24 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   override fun onClick(v: View?) {
     when (v!!.id) {
       R.id.last_seen -> {
-//        autoScrool()
         val appSettings = myHelper.getAppSettings()
         var id = "1"
         when {
           type == TYPE_DAROOD_PAK_COLLECTION -> {
             id = appSettings.last_seen_TYPE_DAROOD_PAK_COLLECTION
-            moveToIdSmooth(daroodList, id)
+            moveToIdSmooth( id)
           }
           type == TYPE_WARID_UL_GHAIB -> {
             id = appSettings.last_seen_TYPE_WARID_UL_GHAIB
-            moveToIdSmooth(waridUlGhaibList, id)
+            moveToIdSmooth( id)
           }
           type == TYPE_munajat_bisalat_ibrahimia -> {
             id = appSettings.last_seen_TYPE_munajat_bisalat_ibrahimia
-            moveToIdSmooth(munajat_bisalat_ibrahimiaList, id)
+            moveToIdSmooth( id)
           }
           type == TYPE_duain -> {
             id = appSettings.last_seen_TYPE_duain
-            moveToIdSmooth(duainList, id)
+            moveToIdSmooth( id)
           }
         }
       }
@@ -189,8 +194,40 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
       R.id.plus -> { increaseSpeed()}
       R.id.minus -> {decreaseSpeed()}
+
+      R.id.start -> { scrollTo(0)}
+      R.id.end -> {scrollTo(daroodList.size - 1)}
+      R.id.sort -> { invertList() }
     }
   }
+
+  private fun invertList() {
+    try {
+      if (daroodList.isNotEmpty()) {
+        daroodList.reverse()
+        daroodAdapter.notifyDataSetChanged()
+        recyclerView.post {
+          recyclerView.scrollToPosition(0)
+        }
+      }
+    } catch (e: Exception) {
+      e.printStackTrace()
+    }
+  }
+
+  private fun scrollTo(i: Int) {
+    myHelper.log("scrollTo:$i")
+    try {
+      if (daroodList.isNotEmpty()) {
+        recyclerView.post {
+          recyclerView.scrollToPosition(i)
+        }
+      }
+    } catch (e: Exception) {
+      e.printStackTrace()
+    }
+  }
+
   private fun startAutoScroll() {
     stopAutoScroll() // Prevent duplicate handlers
 
@@ -269,7 +306,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     myHelper.toast("Last seen updated.")
   }
 
-  fun moveToIdSmooth(daroodList: ArrayList<Darood>, targetId: String) {
+  fun moveToIdSmooth( targetId: String) {
     val position = daroodList.indexOfFirst { it.id == targetId }
     if (position != -1) {
       recyclerView.smoothScrollToPosition(position) // Smooth scroll to item
@@ -277,7 +314,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
   }
 
 
-  private fun fetchDaroodData(daroodList: ArrayList<Darood>, collection: String, sort_type: Int = SORT_TYPE_DESC) {
+  private fun fetchDaroodData( collection: String, sort_type: Int = SORT_TYPE_DESC) {
     myHelper.showDialog()
     db?.collection("daroodarabic")
       ?.document("Uzcijxle9p4leTfWJBxs") // Main document
